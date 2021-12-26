@@ -80,13 +80,10 @@ int SaveTemp(float Temp) // Function til at gemme data i mit array
 }
 
 bool ToggleLed(void *) { //Function til at få mine lampe til at blinke
-  if (blinking)
-  {
-    digitalWrite(LED1, !digitalRead(LED1));
-    digitalWrite(LED2, !digitalRead(LED2));
-    digitalWrite(LED3, !digitalRead(LED3));
-    digitalWrite(LED4, !digitalRead(LED4));
-  }
+    digitalWrite(LED1, blinking ? !digitalRead(LED1) : LOW);
+    digitalWrite(LED2, blinking ? !digitalRead(LED2) : LOW);
+    digitalWrite(LED3, blinking ? !digitalRead(LED3) : LOW);
+    digitalWrite(LED4, blinking ? !digitalRead(LED4) : LOW);
   return true;
 }
 
